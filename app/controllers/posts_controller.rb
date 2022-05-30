@@ -1,16 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   def index
     @posts = Post.all
   end
 
   def new
     @post=Post.new
-  end
-
-  def create
-    Post.create(post_params)
-    redirect_to new_post_path
   end
 
   def create
@@ -37,6 +32,11 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice:"ブログを削除しました！"
   end
 
   private
