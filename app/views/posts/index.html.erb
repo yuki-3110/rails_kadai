@@ -9,10 +9,11 @@
   <tr>
     <td><%= post.content %></td>
     <td><%= link_to '詳細を確認する', post_path(post.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_post_path(post.id) %></td>
   </tr>
 <% end %>
 </table>
 
 <br>
 
-<%= link_to '新しくブログを投稿する', new_post_path %>
+<%= link_to '新しくつぶやきを投稿する', new_post_path %>
