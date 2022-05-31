@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <header class="header">
+    <%= image_tag 'logo.png', class:'logo' %>
+    <%= link_to "つぶやき一覧", posts_path %>
+    </header>
     <%= yield %>
+    <br>
+    <br>
+    <footer class="footer">
+      <a>© 2022 つぶやきサイト</a>
+    </footer>
   </body>
 </html>
+
